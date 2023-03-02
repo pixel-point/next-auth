@@ -32,7 +32,7 @@ export async function openidClient(
     {
       client_id: provider.clientId as string,
       client_secret: provider.clientSecret as string,
-      redirect_uris: [provider.callbackUrl],
+      redirect_uris: [process.env.NEXT_PUBLIC_NEXTAUTH_CALLBACK_URL],
       ...provider.client,
     },
     provider.jwks
